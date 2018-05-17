@@ -10,8 +10,8 @@ class WeatherForecast extends Component {
   state = {
     data: null,
     apiKey: "82d5aca104b36081fa4a3759bfd51054",
-    lat: "38.76",
-    lon: "-121.16", 
+    lat: "38.8213",
+    lon: "-121.1931", 
     apiUrl: "https://api.openweathermap.org/data/2.5/" + this.props.apiType,
   };
 
@@ -28,7 +28,6 @@ class WeatherForecast extends Component {
         if (data.length > 0) {
           this.loadWeatherData(data);
           console.log("Data loaded!");
-          console.log(JSON.parse(data));
         }
       });
 
@@ -41,10 +40,6 @@ class WeatherForecast extends Component {
     this.setState({
       data: JSON.parse(data)
     });
-
-    for (let i = 0; i < this.state.data.list.length; i++) {
-      console.log(this.state.data.list[i]);
-    }
   }
 
   loadIndicatorIcon = (weatherId) => {
@@ -84,7 +79,31 @@ class WeatherForecast extends Component {
     }
 
     return (
-      <div className="weather-cards">{cards}</div>
+      <div className="weather-cards">
+        <div className="forecast-card">
+          <div className="desc row">
+            <div className="col col-center" key={0}>
+              Indicator
+            </div>
+            <div className="col col-center" key={1}>
+              Date/Time
+            </div>
+            <div className="col col-center" key={2}>
+              Temperature
+            </div>
+            <div className="col col-center" key={3}>
+              Humidity
+            </div>
+            <div className="col col-center" key={4}>
+              Pressure
+            </div>
+            <div className="col col-center" key={5}>
+              Wind Speed
+            </div>
+          </div>
+          {cards}
+        </div>
+      </div>
     );
   }
 

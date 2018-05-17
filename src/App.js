@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
 // import Weather from "./components/Weather";
-import ForecastCard from "./modules/ForecastCard";
 import WeatherForecast from "./modules/WeatherForecast";
 
 import './App.css';
 
 class App extends Component {
-  componentWillMount() {
-    document.title = "MyWeather"
-  }
-
   render() {
     return (
       <div className="App">

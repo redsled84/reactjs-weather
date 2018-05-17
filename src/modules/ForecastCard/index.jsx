@@ -10,46 +10,24 @@ class ForecastCard extends Component {
 
   render() {
     return (
-      <div className="forecast-card">
-        <div className="desc row">
-          <div className="col col-center" key={0}>
-            Indicator
-          </div>
-          <div className="col col-center" key={1}>
-            Date/Time
-          </div>
-          <div className="col col-center" key={2}>
-            Temperature
-          </div>
-          <div className="col col-center" key={3}>
-            Humidity
-          </div>
-          <div className="col col-center" key={4}>
-            Pressure
-          </div>
-          <div className="col col-center" key={5}>
-            Wind Speed
-          </div>
+      <div className="weather-data row">
+        <div className="col col-center" key={0}>
+          <i className={this.props.icon}></i>
         </div>
-        <div className="weather-data row">
-          <div className="col col-center" key={0}>
-            <i className={this.props.icon}></i>
-          </div>
-          <div className="date col col-center" key={1}>
-            {this.props.date}
-          </div>
-          <div className="col col-center" key={2}>
-            {this.kelvinToFahrenheit(this.props.temp)}&deg;F
-          </div>
-          <div className="col col-center" key={3}>
-            {this.props.humidity}%
-          </div>
-          <div className="col col-center" key={4}>
-            {this.props.pressure} hPa
-          </div>
-          <div className="wind-speed col col-center" key={5}>
-            {this.props.windSpeed} m/s
-          </div>
+        <div className="date col col-center" key={1}>
+          {this.props.date}
+        </div>
+        <div className="col col-center" key={2}>
+          {this.kelvinToFahrenheit(this.props.temp)}&deg;F
+        </div>
+        <div className="col col-center" key={3}>
+          {this.props.humidity}%
+        </div>
+        <div className="col col-center" key={4}>
+          {this.props.pressure} hPa
+        </div>
+        <div className="wind-speed col col-center" key={5}>
+          {this.props.windSpeed} m/s
         </div>
       </div>
     );
